@@ -8,7 +8,7 @@
 _Replace anything surrounded by the `< >` symbols._
 
 ## SUMMARY:
- < Provide a short description of your program's functionality. No more than a couple sentences. >
+ Simulates a dart game as well as a few other cool things.
 
 ## GRACE DAYS
 Grace days used for this assignment: < 0 >

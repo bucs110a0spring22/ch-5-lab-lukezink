@@ -33,6 +33,10 @@ import math
 #                   Your Code Goes Below                #
 #########################################################
 def drawSquare(myturtle=None, width=0, top_left_x=0, top_left_y=0):
+  """
+  Creates the screen
+  takes a turtle, and 3 integer values for the top left x and y and width values
+  """
   myturtle.setworldcoordinates(top_left_x, top_left_y-width, top_left_x+width, top_left_y)
   myturtle.bgcolor("brown")
   plane = turtle.Turtle()
@@ -46,6 +50,10 @@ def drawSquare(myturtle=None, width=0, top_left_x=0, top_left_y=0):
   plane.goto(top_left_x,top_left_y)
   
 def drawLine(myturtle=None, x_start=-1, y_start=-1, x_end=1, y_end=1):
+  """
+  Draws a horizontal and then vertical axis.
+  Takes a turtle and the starting and ending x and y coordinates.
+  """
   #myturtle.hideturtle()
   myturtle.up()
   myturtle.goto(x_start,0)
@@ -58,12 +66,20 @@ def drawLine(myturtle=None, x_start=-1, y_start=-1, x_end=1, y_end=1):
 
 
 def drawCircle(myturtle=None, radius=0):
+  """
+  Draws a circle.
+  Takes a turtle and a radius as an integer value.
+  """
   #myturtle.hideturtle()
   myturtle.goto(0,-radius)
   myturtle.circle(radius)
   
   
 def setUpDartboard(myscreen=None, myturtle=None): 
+  """
+  Sets up the screen.
+  Takes a screen and a turtle
+  """
   drawSquare(myscreen, 2, -1, 1)
   drawLine(myturtle, -1, 0, 1, 0)
   drawLine(myturtle, 0, -1, 0, 1)
@@ -71,6 +87,10 @@ def setUpDartboard(myscreen=None, myturtle=None):
 
 
 def isInCircle(myturtle=None, circle_center_x=0, circle_center_y=0, radius=0):
+  """
+  Checks if a dart thrown is in the circle.
+  Takes the circle center coordinates and radius as an integer and a turtle.
+  """
   distance = myturtle.distance(circle_center_x,circle_center_y)
   if distance < 1:
     #print(distance)
@@ -80,6 +100,10 @@ def isInCircle(myturtle=None, circle_center_x=0, circle_center_y=0, radius=0):
     return False
   
 def throwDart(myturtle=None):
+  """
+  Places a point, simulating a dart throw
+  Takes a turtle
+  """
   xcoor = random.uniform(-1,1)
   ycoor = random.uniform(-1,1)
   myturtle.up()
@@ -93,6 +117,10 @@ def throwDart(myturtle=None):
     return 0
   
 def playDarts(myturtle=None):
+  """
+  Simulates the card game.
+  Takes a turtle
+  """
   pointsp1 = 0
   pointsp2 = 0
   for x in range (10):
@@ -106,6 +134,10 @@ def playDarts(myturtle=None):
   print("Player 2 Score " + str(pointsp2))
         
 def montePi(myturtle=None, num_darts=0):
+  """
+  Throws a user-specified number of darts, and uses a miss/throw ratio to calculate the value of pi.
+  Takes a number of darts to be thrown and a turtle.
+  """
   accumulator = 0
   total = 0
   for x in range (num_darts):
@@ -119,7 +151,7 @@ def montePi(myturtle=None, num_darts=0):
       
 #########################################################
 #         Do not alter any code below here              #
-#       Your code must work with the main proivided     #
+#       Your code must work with the main provided     #
 #########################################################
 def main():
     # Get number of darts for simulation from user
